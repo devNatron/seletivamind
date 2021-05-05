@@ -6,7 +6,6 @@ const user = (user, acesso, token) => {
       nome: user.nome,
       email: user.email,
       cpf: user.cpf,
-      acesso,
     },
     links: {
       self: `/api/v1/users/${user.id}`,
@@ -14,6 +13,7 @@ const user = (user, acesso, token) => {
   };
 
   if (token) payload.token = token;
+  if (acesso) payload.attributes.acesso = acesso;
 
   return payload;
 };

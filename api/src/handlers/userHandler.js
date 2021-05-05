@@ -141,7 +141,7 @@ const authenticate = async (req, h) => {
 
     const token = generateToken({ id: user.id });
 
-    return h.response(transformer.user(user, token, user.acesso)).code(200);
+    return h.response(transformer.user(user, user.acesso, token)).code(200);
   } catch (err) {
     return h.response({ error: "Falha na autenticação" }).code(400);
   }
