@@ -30,7 +30,6 @@ export const authContext = createContext({} as authContextProps)
 
 export default function AuthContextProvider({children}: authContextProviderProps){
   const [user, setUser] = useState<userProps>()
-  const history = useHistory()
 
   useEffect(() => {
     const storage_token = localStorage.getItem('token');
@@ -80,7 +79,6 @@ export default function AuthContextProvider({children}: authContextProviderProps
       
       setUser(newUserInfo)
       localStorage.setItem('user', JSON.stringify(newUserInfo));
-      history.push('/dashboard/user')
     }
 }
 

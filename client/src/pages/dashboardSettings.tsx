@@ -32,7 +32,9 @@ export function DashboardSettings(){
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     
-    setUpdateSettings(formInputs)
+    await setUpdateSettings(formInputs)
+
+    history.push('/dashboard/user')
   }
 
   function onInputChange(e: React.ChangeEvent<HTMLInputElement>){
