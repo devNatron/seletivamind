@@ -32,8 +32,6 @@ cd client
 npm install
 ```
 
-Configurando back-end:
-
 ## ☕ Usando o projeto
 
 Para usar, siga estas etapas:
@@ -42,6 +40,7 @@ Inicie o servidor mongodb em sua maquina.
 
 Usando o backend:
 em services > mongo.js, você pode selecionar qual database mongo utilizar e sua porta.
+
 após basta iniciar o projeto com:
 
 ```
@@ -49,7 +48,9 @@ yarn start
 ```
 
 Usando o frontend:
+
 em services > api.js, você pode configurar o endereço do servidor backend.
+
 após basta iniciar o projeto com:
 
 ```
