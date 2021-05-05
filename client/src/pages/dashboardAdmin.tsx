@@ -20,7 +20,7 @@ export function DashboardAdmin(){
   return(
     <div>
       <div className={Styles.userInfoContainer}>
-        <h2>Seja bem vindo {user?.nome}!</h2>
+        <h2>Seja bem vindo Administrador {user?.nome}!</h2>
         <h3>Suas informações cadastradas:</h3>
         <div className={Styles.userInfo}>
           <p>Nome: {user?.nome}</p>
