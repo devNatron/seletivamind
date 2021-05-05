@@ -1,0 +1,42 @@
+.pageContainer {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cadastroContainer {
+  padding: 1rem 1rem 0.5rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  border: 1px solid black;
+  background-color: lightgray;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.formContainer .input {
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  height: 2rem;
+  width: 15rem;
+  border: 1px solid black;
+}
+.formContainer label {
+  font-size: 0.8rem;
+}
+
+.formContainer .button {
+  height: 1.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid black;
+}

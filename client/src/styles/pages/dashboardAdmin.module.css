@@ -1,0 +1,22 @@
+.userInfoContainer {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.userInfo {
+  margin-top: 2rem;
+  padding: 1rem;
+
+  border: 1px solid black;
+}
+
+.userInfoContainer h2 {
+  margin-bottom: 1rem;
+}
+
+.userInfo p {
+  margin-bottom: 0.5rem;
+}

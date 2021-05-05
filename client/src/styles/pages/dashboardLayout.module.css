@@ -1,0 +1,75 @@
+.dashboardContainer {
+}
+
+.headerContainer {
+  position: relative;
+  width: 100vw;
+  padding: 1rem 0;
+
+  background-color: lightgray;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerContainer h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.headerContainer .perfil {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerContainer .perfil img {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 0.5rem;
+}
+
+.headerContainer .perfil button {
+  height: 1.5rem;
+  padding: 0 0.5rem;
+  border: 1px solid black;
+}
+
+.headerContainer .perfil .perfilButton {
+  border: none;
+  background: transparent;
+  font-size: 0;
+  width: fit-content;
+  height: fit-content;
+
+  cursor: pointer;
+}
+.userInfoContainer {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.userInfo {
+  margin-top: 2rem;
+  padding: 1rem;
+
+  border: 1px solid black;
+}
+
+.userInfoContainer h2 {
+  margin-bottom: 1rem;
+}
+
+.userInfo p {
+  margin-bottom: 0.5rem;
+}
