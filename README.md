@@ -56,4 +56,6 @@ após basta iniciar o projeto com:
 yarn start
 ```
 
+Para ter uma conta com acesso admin, crie uma conta através do client e edite o valor de acesso no banco de dados para 999.
+
 [⬆ Voltar ao topo](#seletivamind)<br>

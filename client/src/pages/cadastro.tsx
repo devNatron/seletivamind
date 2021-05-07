@@ -48,15 +48,15 @@ export function Cadastro(){
       <div className={Styles.cadastroContainer}>
         <form onSubmit={handleSubmit} className={Styles.formContainer}>
           <label htmlFor="nome">Insira seu nome:</label>
-          <input value={formInputs.nome} onChange={onInputChange} name="nome" type="text" className={Styles.input}/>
+          <input required value={formInputs.nome} onChange={onInputChange} name="nome" type="text" className={Styles.input}/>
           <label htmlFor="email">Insira seu email:</label>
-          <input value={formInputs.email} onChange={onInputChange} name="email" type="text" className={Styles.input}/>
+          <input required value={formInputs.email} onChange={onInputChange} name="email" type="text" className={Styles.input}/>
           <label htmlFor="cpf">Insira seu CPF (000.000.000-00):</label>
-          <input value={formInputs.cpf} onChange={onInputChange} name="cpf" type="text" className={Styles.input}/>
+          <input required value={formInputs.cpf} onChange={onInputChange} name="cpf" type="text" className={Styles.input}/>
           <label htmlFor="senha">Insira uma senha:</label>
-          <input value={formInputs.senha} onChange={onInputChange} name="senha" type="password" className={Styles.input}/>
+          <input required value={formInputs.senha} onChange={onInputChange} name="senha" type="password" className={Styles.input}/>
           <label htmlFor="senhaCheck">repita a senha:</label>
-          <input value={formInputs.senhaCheck} onChange={onInputChange} name="senhaCheck" type="password" className={Styles.input}/>
+          <input required value={formInputs.senhaCheck} onChange={onInputChange} name="senhaCheck" type="password" className={Styles.input}/>
           <button type='submit' className={Styles.button}>
             Criar conta
           </button>

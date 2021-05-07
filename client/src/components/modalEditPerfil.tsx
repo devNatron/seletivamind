@@ -49,11 +49,11 @@ export function ModalEditPerfil({id, nome, email, cpf}: editUserSettingsProps){
         <h2>Configure as informações de {nome}</h2>
         <form onSubmit={handleSubmit} className={Styles.formSettings}>
           <label htmlFor="nome">Insira seu nome:</label>
-          <input value={formInputs.nome} onChange={onInputChange} name="nome" type="text" className={Styles.input}/>
+          <input required value={formInputs.nome} onChange={onInputChange} name="nome" type="text" className={Styles.input}/>
           <label htmlFor="email">Insira seu email:</label>
-          <input value={formInputs.email} onChange={onInputChange} name="email" type="text" className={Styles.input}/>
+          <input required value={formInputs.email} onChange={onInputChange} name="email" type="text" className={Styles.input}/>
           <label htmlFor="cpf">Insira seu CPF (000.000.000-00):</label>
-          <input value={formInputs.cpf} onChange={onInputChange} name="cpf" type="text" className={Styles.input}/>
+          <input required value={formInputs.cpf} onChange={onInputChange} name="cpf" type="text" className={Styles.input}/>
           <button type='submit' className={Styles.button}>
             Atualizar dados
           </button>
