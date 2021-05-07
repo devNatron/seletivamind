@@ -68,10 +68,15 @@ const getOne = async (req, h) => {
 };
 
 const getAll = async (req, h) => {
-  const users = await UserModel.find({});
+  const users = await UserModel.find({})
+    .select("+acesso")
+    .where("acesso")
+    .ne(999);
 
   return h
-    .response({ data: users.map((user) => transformer.user(user)) })
+    .response({
+      data: users.map((user) => transformer.user(user, user.acesso)),
+    })
     .code(200);
 };
 
@@ -103,7 +108,7 @@ const update = async (req, h) => {
   return h.response(transformer.user(user, user.acesso)).code(200);
 };
 
-const updateAcesso = async (req, h) => {
+const alterarAcesso = async (req, h) => {
   const { id } = req.payload;
 
   if (reqIncompleta([id])) return h.response().code(400);
@@ -154,5 +159,5 @@ module.exports = {
   remove,
   authenticate,
   update,
-  updateAcesso,
+  alterarAcesso,
 };

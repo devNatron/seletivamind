@@ -12,7 +12,7 @@ const authenticate = async (req, h) => {
   try {
     const user = await UserModel.findOne({
       $or: [{ email: email }, { cpf: cpf }],
-    }).select("+senha");
+    }).select("+senha").select("+acesso");
 
     if (!user)
       return h.response({ error: "Email/CPF ou Senha não conferem" }).code(400);
@@ -25,7 +25,7 @@ const authenticate = async (req, h) => {
     const token = jwt.sign({ id: user.id }, JWT_SECRET, {
       expiresIn: 60 * 60 * 24, //24 hrs
     });
-    return h.response(transformer.user(user, token));
+    return h.response(transformer.user(user, user.acesso, token));
   } catch (err) {
     return h.response({ error: "Falha na autenticação" }).code(400);
   }

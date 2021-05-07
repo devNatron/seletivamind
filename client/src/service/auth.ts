@@ -62,8 +62,6 @@ async function updateSettings(newSettings: NewSettingsProps){
   return response;
 }
 
-
-
 export default {
   signIn,
   register,

@@ -13,7 +13,7 @@ const user = (user, acesso, token) => {
   };
 
   if (token) payload.token = token;
-  if (acesso) payload.attributes.acesso = acesso;
+  if (acesso != null) payload.attributes.acesso = acesso;
 
   return payload;
 };

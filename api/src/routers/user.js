@@ -4,7 +4,7 @@ module.exports = [
   {
     method: "GET",
     path: "/api/v1/users",
-    config: { auth: false },
+    config: { auth: "jwt" },
     handler: userHandler.getAll,
   },
   {
@@ -39,8 +39,8 @@ module.exports = [
   },
   {
     method: "PATCH",
-    path: "/api/v1/users/updateAcesso",
+    path: "/api/v1/users/alterarAcesso",
     config: { auth: "jwt" },
-    handler: userHandler.updateAcesso,
+    handler: userHandler.alterarAcesso,
   },
 ];

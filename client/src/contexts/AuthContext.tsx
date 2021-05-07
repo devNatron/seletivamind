@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { createContext } from "react";
-import { useHistory } from 'react-router';
 import { SettingsProps } from '../pages/dashboardSettings';
 import { api } from '../service/api';
 import auth, {SignInProps} from '../service/auth';
@@ -24,6 +23,7 @@ type authContextProps = {
   handleSignOut: () => void;
   registerSuccess: (user: userProps, token: string) => void;
   setUpdateSettings: (newSettings: SettingsProps) => void;
+  editUserSettings: (newSettings: SettingsProps, id: string) => void;
 }
 
 export const authContext = createContext({} as authContextProps)
@@ -48,7 +48,15 @@ export default function AuthContextProvider({children}: authContextProviderProps
       console.log(response.error)
 
     if(response.data){
-      setUser(response.data.attributes)
+      const comingUser = response.data.attributes
+
+      if(comingUser.acesso === 0){
+        console.log('Usuário sem acesso')
+        handleSignOut()
+        return
+      }
+
+      setUser(comingUser)
 
       setDefaultHeadersToken(response.data.token)
       localStorage.setItem('token', response.data.token);
@@ -80,7 +88,18 @@ export default function AuthContextProvider({children}: authContextProviderProps
       setUser(newUserInfo)
       localStorage.setItem('user', JSON.stringify(newUserInfo));
     }
-}
+  }
+
+  async function editUserSettings(newSettings: SettingsProps, id: string){    
+    const response = await auth.updateSettings({
+      ...newSettings,
+      id,
+    })
+
+    if(response.error){
+      console.log(response.error)
+    }
+  }
 
   async function handleSignOut(){
     localStorage.clear()
@@ -99,7 +118,8 @@ export default function AuthContextProvider({children}: authContextProviderProps
       handleSignIn,
       handleSignOut,
       registerSuccess,
-      setUpdateSettings
+      setUpdateSettings,
+      editUserSettings
     }}>
       {children}
     </authContext.Provider>

@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from 'react'
-import { useHistory } from 'react-router'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { authContext } from '../contexts/AuthContext'
 
@@ -10,7 +9,6 @@ type DashboardProps = {
 }
 export function DashboardLayout({children}: DashboardProps){
   const {handleSignOut} = useContext(authContext)
-  const history = useHistory() 
 
   function signOut(){
     handleSignOut()
